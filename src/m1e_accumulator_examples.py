@@ -212,6 +212,7 @@ def draw_row_of_circles(n, point, color, window):
     #
     # Many students (and professionals) find this technique less
     # error-prone that using the loop variable to do all the work.
+    # Error: error-prone *than
     # ------------------------------------------------------------------
 
     radius = 20
