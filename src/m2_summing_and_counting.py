@@ -294,7 +294,7 @@ def count_sines_vs_cosines(m):
       > I do, but you should totally show us the code. Or the derivation. Better, the derivation of the code. 
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # done: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
@@ -310,7 +310,7 @@ def count_sines_vs_cosines(m):
 # My friend Alex's way:
 # cosine = math.cos((-m) + k)
 # sine = math.sin((-m) +k)
-# if sine > cos 
+# if sine > cos
 #
 
 # TODO personal: Try to sum scalars of the cosine function, multiples of cos(pi) 2pi, iwth different radi circles
