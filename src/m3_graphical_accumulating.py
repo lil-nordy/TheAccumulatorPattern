@@ -193,6 +193,6 @@ def draw_lines(n, point, window):
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
-# Making all of this yourself with collaboration is a very rewarding experience. 
+# Making all of this yourself with collaboration is a very rewarding experience.
 # ----------------------------------------------------------------------
 main()

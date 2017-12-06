@@ -307,7 +307,8 @@ def count_sines_vs_cosines(m):
             count += 1
     return count
 
-# My friend Alex's way:
+'''
+My friend Alex's way:
 # cosine = math.cos((-m) + k)
 # sine = math.sin((-m) +k)
 # if sine > cos
