@@ -450,5 +450,8 @@ def sum_unit_fractions_from(m, n):
     #
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
+#  ? What in the hell is this blue bookmark?
+# NOTE: alt+N brings up bookmark menus and hotkeys. Still don't know wtf the blue stuff is.
 # ----------------------------------------------------------------------
+
 main()
