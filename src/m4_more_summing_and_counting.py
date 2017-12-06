@@ -12,7 +12,7 @@ in its "in graphics" form:
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Nathaniel Nordquist .
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import math
@@ -90,7 +90,7 @@ def run_test_sum_from():
     print('       actual (from my code):  ', answer_from_my_code)
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   When you have READ the above  run_test_sum_from  function,
 #   asking questions as needed, and you feel that you (mostly, at least)
 #   understand it, and you feel that you understand from the example:
@@ -114,7 +114,7 @@ def sum_from(m, n):
         sum_from(6, 9) returns 6 + 7 + 8 + 9, that is, 30.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # IMPORTANT:  Your solution MUST
@@ -124,7 +124,10 @@ def sum_from(m, n):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
-
+    the_sum = 0
+    for i in range(n-m +1):
+        the_sum = the_sum + (m+i)
+    return the_sum
 
 def run_test_factorial():
     """ Tests the   factorial   function. """
@@ -162,6 +165,39 @@ def run_test_factorial():
     #   ** uses  math.factorial  as an ORACLE for testing. **
     # ------------------------------------------------------------------
 
+    # Test 3:
+    answer_from_oracle = math.factorial(50)
+    answer_from_my_code = factorial(50)
+    print('expected answer (from oracle):', answer_from_oracle)
+    print('my answer (from code):        ', answer_from_my_code)
+
+    # Test 4:
+    answer_from_oracle = math.factorial(60)
+    answer_from_my_code = factorial(60)
+    print('expected answer (from oracle):', answer_from_oracle)
+    print('my answer (from code):        ', answer_from_my_code)
+
+    # Test 5:
+    answer_from_formula = 40320
+    answer_from_my_code = factorial(8)
+    print('expected answer (from formula, wolfram):', answer_from_formula)
+    print('my answer (from code):                  ', answer_from_my_code)
+
+    # Test 6:
+    answer_from_formula = 3628800
+    answer_from_my_code = factorial(10)
+    print('expected answer (from wolfram):', answer_from_formula)
+    print('my answer:                    :', answer_from_my_code)
+
+    # Test 7:
+    answer_from_formula = 24
+    answer_from_my_code = factorial(4)
+    print('expected answer (from artithmetic):', answer_from_formula)
+    print('my answer (from code:              ', answer_from_my_code)
+
+
+
+
 
 def factorial(n):
     """
@@ -173,12 +209,67 @@ def factorial(n):
         factorial(0) returns 1 (by definition).
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
-    # ------------------------------------------------------------------
+    # -----------------------------------------------------------------
+
+    # I have solved the problems in a number of ways. I will present the shortest, most elegant solution FOLLOWED BY:
+    # -- other workable solutions and their explainations
+    # -- code with bugs, with their bugs explained (why they return what they do).
+
+
+    # Best code:
+    multiple = 1
+    for i in range(n):
+        multiple *= (n-i)
+    return multiple
+# OTHER SOLUTIONS MINIMIZED BELOW! :)
+    # CODE:
+    # multiple = 1
+    # for i in range(n):
+    #     multiple = multiple * (1+i)
+    # return multiple
+
+
+    # CODE:
+
+    # multiple = n
+    # # starts at n
+    # for i in range(n):
+    #     multiple = multiple * (n - (i + 1))
+    #     # multiplies by n-1, then n-2, then n-3
+    #     # does that until we hit 1; or, n - ((n-n)+1)
+    # return multiple
+
+
+    # How my friend Aman solved the problem:
+    # factorial = 1
+    # for i in range(n):
+    #     factorial *= i +1
+    # return factorial
+    #
+
+    # THE CODE BELOW is off by a factor of n. Since i initializes at zero, you start by multiplying n by n,
+    # instead of (n-1).
+    # multiple = n
+    # for i in range(n):
+    #     multiple = multiple * (n-i)
+    # return multiple
+
+    # #THE CODE BELOW returns zero.
+    # multiple = n
+    # for i in range(n):
+    #     multiple = multiple * (n-(i+1))
+    # return multiple
+    #
+    # #THE CODE BELOW is off by a factor of 20; 4*5
+    # multiple = n
+    # for i in range(n):
+    #     multiple = multiple * (n-i+1)
+    # return multiple
 
 
 def run_test_count_cosines_from():
